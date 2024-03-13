@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+.new-visit {
+
+  &__topbar {
+    border-bottom: 1px solid rgba(96, 96, 96, 1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    height: 70px;
+    width: 100%;
+    padding-left: 23px;
+    cursor: pointer;
+
+    & p {
+      margin: 0px;
+      color: rgba(45, 132, 251, 1);
+    }
+  }
+}
