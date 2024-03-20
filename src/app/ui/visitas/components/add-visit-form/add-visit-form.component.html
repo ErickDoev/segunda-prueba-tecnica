@@ -4,67 +4,88 @@
     <form class="form">
       <div class="row">
         <div class="form-group">
-          <label for="Name">Nombre</label>
-          <input type="text" id="Name">
+          <span>Nombre</span>
+          <mat-form-field appearance="outline">
+            <input matInput>
+          </mat-form-field>
         </div>
         <div class="form-group">
-          <label for="App">Apellido Paterno</label>
-          <input type="text" id="App">
+          <span>Apellido Paterno</span>
+          <mat-form-field appearance="outline">
+            <input matInput>
+          </mat-form-field>
         </div>
         <div class="form-group">
-          <label for="Apm">Apellido Materno</label>
-          <input type="text" id="Apm">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="form-group">
-          <label for="Name">Relación con el visitante</label>
-          <select name="" id="">
-            <option>Selecciona</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="App">Acompañantes</label>
-          <input type="text" id="App">
-        </div>
-        <div class="form-group">
-          <label for="da">Día de visita</label>
-          <input type="date" id="da">
+          <span>Apellido Materno</span>
+          <mat-form-field appearance="outline">
+            <input matInput>
+          </mat-form-field>
         </div>
       </div>
 
       <div class="row">
         <div class="form-group">
-          <label for="Name">Hora de acceso</label>
-          <input type="time" id="Name">
+          <span>Relación con el visitante</span>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              @for (opt of options; track opt) {
+                <mat-option [value]="opt">{{opt}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <span>Acompañantes</span>
+          <mat-form-field appearance="outline">
+            <input matInput>
+          </mat-form-field>
         </div>
         <div class="form-group">
-          <label for="App">Tolerancia</label>
-          <select name="" id="">
-            <option>Selecciona</option>
-          </select>
+          <span>Día de visita</span>
+          <mat-form-field appearance="outline">
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>DD/MM/AAAA</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <span>Hora de acceso</span>
+          <mat-form-field appearance="outline">
+            <input matInput type="time">
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <span>Tolerancia</span>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              @for (opt of tolerancy; track opt) {
+                <mat-option [value]="opt">{{opt}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
         </div>
         <div class="form-groups">
-          <p>Uso de estacionamiento</p>
-          <div class="slideOne">
-            <input type="checkbox" value="false" id="slideOne" name="check" checked />
-            <label for="slideOne"></label>
-          </div>
+          <mat-slide-toggle>Uso de estacionamiento</mat-slide-toggle>
         </div>
       </div>
 
       <div class="row">
-        <div class="form-group">
+        <div class="form-group custom-width">
           <label for="Comentarios">Comentarios</label>
-          <textarea id="Comentarios" cols="30" rows="10"></textarea>
+          <mat-form-field appearance="outline">
+            <textarea matInput id="Comentarios"></textarea>
+          </mat-form-field>
         </div>
       </div>
 
       <div class="button-actions">
-        <button class="button button-delete" type="button">Cancelar</button>
-        <button class="button button-search" type="button" [routerLink]="['/visit-qr']">Guardar</button>
+        <button class="button-delete" mat-raised-button type="button">Cancelar</button>
+        <button class="button-search" mat-raised-button type="button" [routerLink]="['/visit-qr']">Guardar</button>
       </div>
     </form>
   </div>
