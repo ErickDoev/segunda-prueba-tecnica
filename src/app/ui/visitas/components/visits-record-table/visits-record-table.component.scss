@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  margin-top: 50px;
+}
+
+.even{
+  background-color: rgba(239, 239, 239, 1);
+}
+
+.grey{
+  background-color: #606060 !important;
+  color: white;
+}
+
+::ng-deep .mat-mdc-row:nth-child(even){
+    background-color: rgba(239, 239, 239, 1) !important;
+}

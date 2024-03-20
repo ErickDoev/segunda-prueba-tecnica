@@ -34,8 +34,15 @@ h1 {
    &__container{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     gap: 13px;
+   }
+
+   &__inputs{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    font-size: 16px;
    }
 }
 
@@ -55,33 +62,19 @@ h1 {
 
   &-delete{
     background-color: #EF2300;
+    width: 145px;
   }
 
   &-search{
-    background: #188D4B;
+    background: #188D4B !important;
+    color: white !important;
+    width: 145px;
   }
 
   &-register{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 16px;
-    gap: 5px;
-    width: auto;
+    color: white;
     background-color: #3D3D3D;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
   }
-}
-
-.input{
-  border: solid 1px #707070;
-  border-radius: 4px;
-  padding: 10.5px 11.5px;
-  width: 180px;
-  color: #606060;
 }
 
 .table{
@@ -131,6 +124,3 @@ h1 {
   border-radius: 4px;
 }
 
-.even{
-  background-color: rgba(239, 239, 239, 1)
-}
